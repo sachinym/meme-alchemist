@@ -1,0 +1,195 @@
+body{
+background: #f857a6;
+background: -webkit-linear-gradient(46deg, #f857a6 0%, #ff5858 100%);
+background: linear-gradient(46deg, #f857a6 0%, #ff5858 100%);
+}
+
+.heading {
+ text-align: center;
+}
+
+.heading .glitch-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.heading .glitch-wrapper .glitch{
+    position: relative;
+            font-size: 50px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #000;
+            letter-spacing: 5px;
+            z-index: 6;
+}
+
+.heading .glitch-wrapper .glitch:before, .glitch:after {
+   display: block;
+   content: attr(data-glitch);
+   position: absolute;
+   top: 0;
+   left: 0;
+   opacity: 0.8;
+}
+
+.heading .glitch-wrapper .glitch:before {
+    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: #00ffff;
+    z-index: -1;
+ }
+
+.heading .glitch-wrapper .glitch:after {
+    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    color: #ff00ff;
+    z-index: -2;
+ }
+
+ @keyframes glitch-color {
+    0% {
+       transform: translate(0);
+    }
+ 
+    20% {
+       transform: translate(-3px, 3px);
+    }
+ 
+    40% {
+       transform: translate(-3px, -3px);
+    }
+ 
+    60% {
+       transform: translate(3px, 3px);
+    }
+ 
+    80% {
+       transform: translate(3px, -3px);
+    }
+ 
+    to {
+       transform: translate(0);
+    }
+}
+
+.meme-generator {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+  
+.blob {
+    position: relative;
+    display:inline-block;
+    margin: 10px;
+    vertical-align: middle;
+    width: 56px;
+    height: 56px;
+    background: #474bff;
+    border-radius: 50%;
+    filter: blur(0.2px) contrast(10) hue-rotate(10);
+    animation: blob-rokv0k 3s infinite ease;
+ }
+ 
+@keyframes blob-rokv0k {
+    12.5% {
+       border-radius: 37% 63% 70% 30% / 30% 62% 38% 70%;
+    }
+ 
+    25% {
+       border-radius: 50% 50% 70% 30% / 52% 62% 38% 48%;
+    }
+ 
+    37.5% {
+       border-radius: 33% 67% 18% 82% / 52% 75% 25% 48%;
+    }
+ 
+    50% {
+       border-radius: 73% 27% 18% 82% / 52% 32% 68% 48%;
+    }
+ 
+    62.5% {
+       border-radius: 73% 27% 74% 26% / 64% 32% 68% 36%;
+    }
+ 
+    75% {
+       border-radius: 84% 16% 15% 85% / 55% 79% 21% 45%;
+    }
+ 
+    87.5% {
+       border-radius: 12% 88% 69% 31% / 10% 66% 34% 90%;
+    }
+}
+
+.blob p{
+ font-style:oblique;
+ font-size-adjust: initial;
+}
+
+.meme-generator img {
+    height: 430px;
+    object-fit: initial;
+}
+
+/*generate meme button style*/
+.meme-generator .generate-meme-btn {
+    padding: 8px 20px;
+    border-color: 4px solid#222;
+    margin: 24px 0;
+    font-size: 20px;
+    color: rgba(46,91,255,0.69);
+    background: #fff;
+    cursor:auto;
+    transition: all 300ms ease-in-out;
+}
+  
+.meme-generator .generate-meme-btn:hover {
+    padding: 8px 36px;
+    border-left: 8px solid #222;
+    border-right: 8px solid #222;
+    letter-spacing: 3px;
+}
+/*generate meme button end*/
+
+.meme-generator .meme-author {
+    margin: 20px;
+}
+
+/*download button style*/
+.meme-generator .download-btn {
+   min-width: 130px;
+   height: 40px;
+   color: #fff;
+   padding: 5px 10px;
+   font-weight: bold;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   position: relative;
+   display:inline-block;
+   outline: none;
+   border-radius: 5px;
+   z-index: 0;
+   background: #fff;
+   overflow: hidden;
+   border: 2px solid #212529;
+   color: #212529;
+ }
+ .meme-generator .download-btn:hover {
+   color: #fff;
+ }
+ .meme-generator .download-btn:hover:after {
+   height: 100%;
+ }
+ .meme-generator .download-btn:after {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   transition: all 0.4s ease;
+   left: 0;
+   top: 0;
+   height: 0;
+   width: 100%;
+   background: #212529;
+ }
+/*download button end*/
